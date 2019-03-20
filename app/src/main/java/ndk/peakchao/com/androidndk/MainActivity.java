@@ -2,6 +2,7 @@ package ndk.peakchao.com.androidndk;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(JniUtil.getToastString());
 
         Toast.makeText(this, JniUtil.getToastString(), Toast.LENGTH_LONG).show();
+        String content = "这是待加密的字符串哦, i love you !";
+//        Log.e("TAG", content);
+        Log.e("TAG", EncryptionAndDecryptUtil.Encryption(content));
+        Log.e("TAG", EncryptionAndDecryptUtil.Decrypt(EncryptionAndDecryptUtil.Encryption(content)));
     }
 
 
